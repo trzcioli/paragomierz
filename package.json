@@ -1,0 +1,51 @@
+{
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/native": "^5.4.2",
+    "@react-navigation/stack": "^5.3.9",
+    "@types/react-native": "^0.62.10",
+    "base-64": "^0.1.0",
+    "expo": "~37.0.3",
+    "expo-image-picker": "^8.1.0",
+    "expo-random": "^8.2.1",
+    "expo-splash-screen": "^0.2.3",
+    "expo-updates": "~0.2.0",
+    "immer": "^7.0.5",
+    "link": "^0.1.5",
+    "nanoid": "^3.1.10",
+    "react": "~16.9.0",
+    "react-dom": "~16.9.0",
+    "react-native": "~0.61.5",
+    "react-native-camera": "^3.26.0",
+    "react-native-dimension": "^1.0.6",
+    "react-native-dynamic-vector-icons": "^1.0.0",
+    "react-native-elements": "^2.0.2",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-get-random-values": "^1.4.0",
+    "react-native-image-picker": "^2.3.1",
+    "react-native-login-screen": "^1.0.0",
+    "react-native-paper": "^3.10.1",
+    "react-native-reanimated": "^1.9.0",
+    "react-native-safe-area-context": "^1.0.2",
+    "react-native-screens": "^2.9.0",
+    "react-native-snackbar-component": "^1.1.10",
+    "react-native-spinkit": "^1.5.0",
+    "react-native-unimodules": "~0.9.0",
+    "react-native-web": "~0.11.7",
+    "uuid": "^8.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "babel-jest": "~25.2.6",
+    "jest": "~25.2.6",
+    "react-test-renderer": "~16.9.0",
+    "babel-preset-expo": "~8.1.0"
+  },
+  "private": true
+}
