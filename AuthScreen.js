@@ -199,66 +199,61 @@ const AuthScreen = ({ setToken, setIsLoggedIn }) => {
       source={require("./memphis-mini.png")}
       style={styles.backgroundImage}
     >
-      <KeyboardAvoidingView
-        behavior={Platform.OS == "ios" ? "padding" : "height"}
-        style={styles.containerView}
-      >
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <View style={styles.loginScreenContainer}>
-            <SnackBar
-              visible={errorMessage.length > 0}
-              textMessage={errorMessage}
-              actionHandler={() => setErrorMessage("")}
-              actionText="X"
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.loginScreenContainer}>
+          <SnackBar
+            visible={errorMessage.length > 0}
+            textMessage={errorMessage}
+            actionHandler={() => setErrorMessage("")}
+            actionText="X"
+          />
+          <View style={styles.loginFormView}>
+            <Text style={styles.logoText}>Paragomierz</Text>
+            <TextInput
+              placeholder="Email"
+              placeholderColor="#c4c3cb"
+              style={styles.loginFormTextInput}
+              onChangeText={(value) => setEmail(value)}
             />
-            <View style={styles.loginFormView}>
-              <Text style={styles.logoText}>Paragomierz</Text>
-              <TextInput
-                placeholder="Email"
-                placeholderColor="#c4c3cb"
-                style={styles.loginFormTextInput}
-                onChangeText={(value) => setEmail(value)}
-              />
-              <TextInput
-                placeholder="Hasło"
-                placeholderColor="#c4c3cb"
-                style={styles.loginFormTextInput}
-                secureTextEntry={true}
-                onChangeText={(value) => setPassword(value)}
-              />
-              {isRegister && (
-                <>
-                  <TextInput
-                    placeholder="Klucz API"
-                    placeholderColor="#c4c3cb"
-                    style={styles.loginFormTextInput}
-                    onChangeText={(value) => setApiKey(value)}
-                  />
-                  <TextInput
-                    placeholder="Klucz API URL"
-                    placeholderColor="#c4c3cb"
-                    style={styles.loginFormTextInput}
-                    onChangeText={(value) => setUrlApiKey(value)}
-                  />
-                </>
-              )}
-              <Button
-                buttonStyle={styles.loginButton}
-                onPress={() => (isRegister ? tryRegister() : tryLogin())}
-                title={isRegister ? "Zarejestruj" : "Zaloguj się"}
-                loading={loading}
-              />
-              <Button
-                buttonStyle={styles.fbLoginButton}
-                onPress={() => setIsRegister(!isRegister)}
-                title={isRegister ? "Anuluj" : "Zarejestruj się"}
-                color="black"
-                type="outline"
-              />
-            </View>
+            <TextInput
+              placeholder="Hasło"
+              placeholderColor="#c4c3cb"
+              style={styles.loginFormTextInput}
+              secureTextEntry={true}
+              onChangeText={(value) => setPassword(value)}
+            />
+            {isRegister && (
+              <>
+                <TextInput
+                  placeholder="Klucz API"
+                  placeholderColor="#c4c3cb"
+                  style={styles.loginFormTextInput}
+                  onChangeText={(value) => setApiKey(value)}
+                />
+                <TextInput
+                  placeholder="Klucz API URL"
+                  placeholderColor="#c4c3cb"
+                  style={styles.loginFormTextInput}
+                  onChangeText={(value) => setUrlApiKey(value)}
+                />
+              </>
+            )}
+            <Button
+              buttonStyle={styles.loginButton}
+              onPress={() => (isRegister ? tryRegister() : tryLogin())}
+              title={isRegister ? "Zarejestruj" : "Zaloguj się"}
+              loading={loading}
+            />
+            <Button
+              buttonStyle={styles.fbLoginButton}
+              onPress={() => setIsRegister(!isRegister)}
+              title={isRegister ? "Anuluj" : "Zarejestruj się"}
+              color="black"
+              type="outline"
+            />
           </View>
-        </TouchableWithoutFeedback>
-      </KeyboardAvoidingView>
+        </View>
+      </TouchableWithoutFeedback>
     </ImageBackground>
   );
 };
