@@ -7,7 +7,6 @@ import {
   TouchableWithoutFeedback,
   TextInput,
   ImageBackground,
-  KeyboardAvoidingView,
 } from "react-native";
 import { Button } from "react-native-elements";
 import { useEffect, useState } from "react";
@@ -106,7 +105,7 @@ const register = async (
   setToken(token);
   setIsLoggedIn(true);
 
-  navigate("Home", { message: "Zarjestrowano. Witamy!" });
+  navigate("Home", { message: "Zarejestrowano. Witamy!" });
 };
 
 const logIn = async (
@@ -171,28 +170,31 @@ const AuthScreen = ({ setToken, setIsLoggedIn }) => {
     }
   }, [errorMessage]);
 
-  const tryRegister = () =>
-    register(
-      email,
-      password,
-      apiKey,
-      urlApiKey,
-      setToken,
-      setIsLoggedIn,
-      navigation.navigate,
-      setErrorMessage,
-      setLoading
-    );
-  const tryLogin = () =>
-    logIn(
-      email,
-      password,
-      setToken,
-      setIsLoggedIn,
-      navigation.navigate,
-      setErrorMessage,
-      setLoading
-    );
+  const loginOrRegister = () => {
+    if (isRegister) {
+      register(
+        email,
+        password,
+        apiKey,
+        urlApiKey,
+        setToken,
+        setIsLoggedIn,
+        navigation.navigate,
+        setErrorMessage,
+        setLoading
+      );
+    } else {
+      logIn(
+        email,
+        password,
+        setToken,
+        setIsLoggedIn,
+        navigation.navigate,
+        setErrorMessage,
+        setLoading
+      );
+    }
+  };
 
   return (
     <ImageBackground
@@ -240,7 +242,7 @@ const AuthScreen = ({ setToken, setIsLoggedIn }) => {
             )}
             <Button
               buttonStyle={styles.loginButton}
-              onPress={() => (isRegister ? tryRegister() : tryLogin())}
+              onPress={loginOrRegister}
               title={isRegister ? "Zarejestruj" : "Zaloguj się"}
               loading={loading}
             />
