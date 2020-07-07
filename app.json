@@ -2,7 +2,11 @@
   "expo": {
     "name": "paragomierz",
     "slug": "paragomierz",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,7 +18,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "paragomierz"
@@ -22,6 +28,7 @@
     "android": {
       "package": "com.facebook.react.devsupport.DevSettingsActivity"
     },
-    "entryPoint": "node_modules/expo/AppEntry.js"
+    "entryPoint": "node_modules/expo/AppEntry.js",
+    "description": "Aplikacja umożliwia zrobienie zdęcia paragonu lub wrzucenie zdjęcia z pamięci urządzenia, edycję listy produktów i synchronizację wydatków z kontomierzem."
   }
 }
